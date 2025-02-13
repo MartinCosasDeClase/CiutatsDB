@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Franquicies</title>
+</head>
+<body>
+<h1>Franchises</h1>
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Description</th>
+    <th>Cities</th>
+  </tr>
+  <tr th:each="franchise : ${franchises}">
+    <td th:text="${franchise.id}"></td>
+    <td th:text="${franchise.descripcio}"></td>
+    <td>
+      <ul>
+        <li th:each="city : ${franchise.ciutats}" th:text="${city.nom}"></li>
+      </ul>
+    </td>
+  </tr>
+</table>
+</body>
+</html>
