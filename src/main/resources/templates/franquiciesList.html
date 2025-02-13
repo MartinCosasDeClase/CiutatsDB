@@ -2,21 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
   <title>Franquicies</title>
+  <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-<h1>Franchises</h1>
-<table border="1">
+<h1>Franquicies</h1>
+<table>
   <tr>
     <th>ID</th>
-    <th>Description</th>
-    <th>Cities</th>
+    <th>Descripcio</th>
+    <th>Ciutats</th>
   </tr>
-  <tr th:each="franchise : ${franchises}">
-    <td th:text="${franchise.id}"></td>
-    <td th:text="${franchise.descripcio}"></td>
+  <tr th:each="f : ${franquicies}">
+    <td th:text="${f.id}"></td>
+    <td th:text="${f.descripcio}"></td>
     <td>
       <ul>
-        <li th:each="city : ${franchise.ciutats}" th:text="${city.nom}"></li>
+        <li th:each="c : ${f.ciutats}" th:text="${c.nom}"></li>
       </ul>
     </td>
   </tr>

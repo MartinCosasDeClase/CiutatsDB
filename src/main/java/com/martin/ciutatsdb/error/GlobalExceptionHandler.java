@@ -12,7 +12,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     public String handleException(Exception ex, Model model) {
-        String errorMessage = "Señoras y señores, Fall Guys: Nos caemos";
+        String errorMessage = "ERROR DETECTED";
         model.addAttribute("messageError", errorMessage);
         return "errorPage";
     }

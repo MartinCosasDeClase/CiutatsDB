@@ -2,21 +2,22 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Ciutats</title>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-<h1>Cities</h1>
-<table border="1">
+<h1>Ciutats</h1>
+<table>
     <tr>
         <th>ID</th>
-        <th>Name</th>
-        <th>Population</th>
-        <th>Province</th>
+        <th>Nom</th>
+        <th>Poblacio</th>
+        <th>Provincia</th>
     </tr>
-    <tr th:each="city : ${cities}">
-        <td th:text="${city.id}"></td>
-        <td th:text="${city.nom}"></td>
-        <td th:text="${city.poblacio}"></td>
-        <td th:text="${city.provincia.nom}"></td>
+    <tr th:each="c : ${ciutats}">
+        <td th:text="${c.id}"></td>
+        <td th:text="${c.nom}"></td>
+        <td th:text="${c.poblacio}"></td>
+        <td th:text="${c.provincia.nom}"></td>
     </tr>
 </table>
 </body>

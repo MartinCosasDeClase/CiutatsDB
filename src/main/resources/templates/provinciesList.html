@@ -2,19 +2,20 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Provincies</title>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-<h1>Provinces</h1>
-<table border="1">
+<h1>Provincies</h1>
+<table>
     <tr>
         <th>ID</th>
-        <th>Name</th>
-        <th>Country</th>
+        <th>Nom</th>
+        <th>País</th>
     </tr>
-    <tr th:each="province : ${provinces}">
-        <td th:text="${province.id}"></td>
-        <td th:text="${province.nom}"></td>
-        <td th:text="${province.pais.nom}"></td>
+    <tr th:each="p : ${provincies}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nom}"></td>
+        <td th:text="${p.pais.nom}"></td>
     </tr>
 </table>
 </body>

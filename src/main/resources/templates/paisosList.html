@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <title>Paisos</title>
+    <link rel="stylesheet" href="/CSS/style.css">
 </head>
 <body>
-$END$
+<h1>Paisos</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Provincies</th>
+
+    </tr>
+    <tr th:each="p : ${paisos}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nom}"></td>
+        <td>
+            <ul>
+                <li th:each="prov : ${p.provincies}" th:text="${prov.nom}"></li>
+            </ul>
+        </td>
+    </tr>
+</table>
 </body>
 </html>

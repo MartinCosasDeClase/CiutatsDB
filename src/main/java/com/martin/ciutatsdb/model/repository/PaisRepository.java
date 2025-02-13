@@ -1,4 +1,7 @@
 package com.martin.ciutatsdb.model.repository;
 
-public interface PaisRepository {
+import com.martin.ciutatsdb.model.entity.Paisos;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PaisRepository extends JpaRepository<Paisos, Integer> {
 }
