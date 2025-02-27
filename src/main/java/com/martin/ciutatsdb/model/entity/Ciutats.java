@@ -1,5 +1,6 @@
 package com.martin.ciutatsdb.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import org.springframework.lang.NonNull;
 
@@ -26,6 +27,7 @@ public class Ciutats {
             joinColumns = @JoinColumn(name = "ciutat_id"),
             inverseJoinColumns = @JoinColumn(name = "franquicia_id")
     )
+    @JsonIgnoreProperties("ciutats")
     private List<Franquicia> franquicies;
 
     public Ciutats() {

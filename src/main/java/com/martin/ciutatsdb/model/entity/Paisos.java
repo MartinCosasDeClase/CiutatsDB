@@ -1,5 +1,6 @@
 package com.martin.ciutatsdb.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import java.util.List;
 
@@ -12,7 +13,9 @@ public class Paisos {
 
     private String nom;
 
+
     @OneToMany(mappedBy = "pais", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("pais")
     private List<Provincies> provincies;
 
     public Paisos() {

@@ -1,5 +1,6 @@
 package com.martin.ciutatsdb.model.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class Franquicia {
             joinColumns = @JoinColumn(name = "FRANQUICIA_ID"),
             inverseJoinColumns = @JoinColumn(name = "CIUTAT_ID")
     )
+    @JsonIgnoreProperties("franquicies")
     private List<Ciutats> ciutats;
 
     public Franquicia() {

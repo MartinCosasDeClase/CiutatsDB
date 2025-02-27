@@ -26,9 +26,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .csrf(csrf -> csrf.disable())  //  Desactiva CSRF per a evitar bloquejos en Postman
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/users/register/").permitAll()
+                        .requestMatchers("/users/register/","/ciutats", "/paisos", "/provincies","/franquicies").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin(withDefaults())
